@@ -8,7 +8,7 @@ class PokemonScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final pokemonId = ref.watch(pokemonIdProvider);
-    final pokemonName = ref.watch(pokemonNameProvider(pokemonId));
+    final pokemonName = ref.watch(pokemonNameProvider);
 
     return Scaffold(
       appBar: AppBar(
