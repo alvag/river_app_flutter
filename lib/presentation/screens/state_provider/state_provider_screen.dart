@@ -20,7 +20,9 @@ class StateProviderScreen extends ConsumerWidget {
         child: Text(randomName, style: titleStyle),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          ref.invalidate(randomNameProvider);
+        },
         child: const Icon(Icons.refresh_rounded),
       ),
     );
