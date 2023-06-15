@@ -10,7 +10,7 @@ class PokemonService {
           await dio.get('https://pokeapi.co/api/v2/pokemon/$pokemonId');
       return response.data['name'] ?? 'No name';
     } catch (e) {
-      throw Exception('Error getting pokemon name');
+      throw Exception('Name not found');
     }
   }
 }
