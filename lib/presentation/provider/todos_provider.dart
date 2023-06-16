@@ -11,26 +11,39 @@ final todosProvider = StateNotifierProvider<TodosNotifier, List<Todo>>((ref) {
 
 class TodosNotifier extends StateNotifier<List<Todo>> {
   TodosNotifier()
-      : super([
-          Todo(
-            id: _uuid.v4(),
-            description: RandomGenerator.getRandomName(),
-            completedAt: null,
-          ),
-          Todo(
-            id: _uuid.v4(),
-            description: RandomGenerator.getRandomName(),
-            completedAt: null,
-          ),
-          Todo(
-            id: _uuid.v4(),
-            description: RandomGenerator.getRandomName(),
-            completedAt: DateTime.now(),
-          ),
-          Todo(
-            id: _uuid.v4(),
-            description: RandomGenerator.getRandomName(),
-            completedAt: null,
-          ),
-        ]);
+      : super(
+          [
+            Todo(
+              id: _uuid.v4(),
+              description: RandomGenerator.getRandomName(),
+              completedAt: null,
+            ),
+            Todo(
+              id: _uuid.v4(),
+              description: RandomGenerator.getRandomName(),
+              completedAt: null,
+            ),
+            Todo(
+              id: _uuid.v4(),
+              description: RandomGenerator.getRandomName(),
+              completedAt: DateTime.now(),
+            ),
+            Todo(
+              id: _uuid.v4(),
+              description: RandomGenerator.getRandomName(),
+              completedAt: null,
+            ),
+          ],
+        );
+
+  void addTodo() {
+    state = [
+      ...state,
+      Todo(
+        id: _uuid.v4(),
+        description: RandomGenerator.getRandomName(),
+        completedAt: null,
+      ),
+    ];
+  }
 }
