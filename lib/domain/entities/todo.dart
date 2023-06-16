@@ -19,7 +19,7 @@ class Todo {
     return Todo(
       id: id ?? this.id,
       description: description ?? this.description,
-      completedAt: completedAt ?? this.completedAt,
+      completedAt: completedAt,
     );
   }
 }

@@ -46,4 +46,12 @@ class TodosNotifier extends StateNotifier<List<Todo>> {
       ),
     ];
   }
+
+  void toggleDone(String id) {
+    state = state.map((todo) {
+      if (todo.id != id) return todo;
+      if (todo.done) return todo.copyWith(completedAt: null);
+      return todo.copyWith(completedAt: DateTime.now());
+    }).toList();
+  }
 }

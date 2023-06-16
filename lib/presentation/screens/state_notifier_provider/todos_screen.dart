@@ -35,9 +35,13 @@ class _TodosView extends ConsumerWidget {
         final todo = todos[index];
 
         return SwitchListTile(
-            title: Text(todo.description),
-            value: todo.done, // True o False
-            onChanged: (value) {});
+          title: Text(todo.description),
+          subtitle: Text(todo.completedAt.toString()),
+          value: todo.done, // True o False
+          onChanged: (_) {
+            ref.read(todosProvider.notifier).toggleDone(todo.id);
+          },
+        );
       },
     );
   }
